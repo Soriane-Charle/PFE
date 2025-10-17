@@ -1,0 +1,3 @@
+D:/Xilinx/PFE/VITIS_Ctrl_SDRAM/zynq_fsbl/build/CMakeFiles/fsbl.elf.dir
+D:/Xilinx/PFE/VITIS_Ctrl_SDRAM/zynq_fsbl/build/CMakeFiles/edit_cache.dir
+D:/Xilinx/PFE/VITIS_Ctrl_SDRAM/zynq_fsbl/build/CMakeFiles/rebuild_cache.dir

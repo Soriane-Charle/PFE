@@ -1,0 +1,4 @@
+domain_path: D:\Xilinx\PFE\VITIS_Ctrl_SDRAM\export\VITIS_Ctrl_SDRAM\sw\standalone_ps7_cortexa9_0
+app_src_dir: D:\Xilinx\2025.1\Vitis\data\embeddedsw\lib\sw_apps\memory_tests
+template: memory_tests
+lang: c
