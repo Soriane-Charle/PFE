@@ -1,0 +1,11 @@
+Journal de suivi du projet PFE
+17:10;2025
+1. Problems rencontrer
+	-Manque du fichier cmake dans le bon chemin de compilation de vitis
+	-Erreur du fichier coe mal nommer: erreur corriger mais bug qui persiste
+	-Filtre de convolution: Hsl dataflow bloque : presence d'une variable statique que l'empeche de diviser toutes les fonction en dessous de maniere deterministe en taches effectuer parallelement.
+2. A faire la prochaine fois
+	- Se renseigner au prof comment corriger les differentes erreurs
+	- Corriger les erreurs et terminer le TD et le conv-filter
+	- Faire une communication entre la carte sd et un module materiel sur la carte
+	
