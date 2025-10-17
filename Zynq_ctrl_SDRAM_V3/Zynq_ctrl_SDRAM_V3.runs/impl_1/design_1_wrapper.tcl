@@ -97,6 +97,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config  -id {Vivado 12-385}  -string {{ERROR: [Vivado 12-385] Illegal file or directory name 'd:/Xilinx/PFE/Zynq_ctrl_SDRAM_V3/design_1_axi_bram_ctrl_0_bram_1 (1).coe'}}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -106,6 +107,7 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 1
   set_param general.usePosixSpawnForFork 1
+  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 4  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z020clg400-1
@@ -297,6 +299,7 @@ OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
   catch { write_mem_info -force -no_partial_mmi design_1_wrapper.mmi }
+  catch { write_bmm -force design_1_wrapper_bd.bmm }
 OPTRACE "write_bitstream setup" END { }
 OPTRACE "write_bitstream" START { }
   write_bitstream -force design_1_wrapper.bit 

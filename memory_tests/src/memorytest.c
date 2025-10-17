@@ -13,6 +13,7 @@
 #include "platform.h"
 #include "memory_config.h"
 #include "xil_printf.h"
+#include "sleep.h" 
 
 /*
  * memory_test.c: Test memory ranges present in the Hardware Design.
@@ -126,16 +127,42 @@ int main()
 {
 	sint32 i;
 	s32 Status = XST_SUCCESS;
+	int i;
+	int j;
 	int *ptr = (int *) 0x41200000; 
+	int *ptr_BRAM = (int* )0x40000000;
+	int data[16];
 
 	init_platform();
+
+	for (i = 0; i<16; i++)
+	{
+		data[i] = *(ptr + i);// mettre les données de la brams dans un tableau
+	}
 
 	*ptr = 0x55; 
 
 	while (1) 
 	{
-		*ptr = *(ptr +2); 
-
+		//*ptr = *(ptr +2); 
+		if (*(ptr + 2) == 0x00000001)
+		{
+			for (j=0; j<=7; j++)
+			{
+				*ptr = data[j]; 
+  			    usleep(1000000); 
+			}
+			j = 0;
+		}
+		else
+		{
+			for (j=0; j<=7; j++) 
+			{ 
+				*ptr = data[j + 8]; 
+				usleep(1000000); 
+			} 
+			j = 0;
+		}
 	}
 
 	/*print("--Starting Memory Test Application--\n\r");

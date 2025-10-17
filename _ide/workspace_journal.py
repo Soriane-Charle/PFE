@@ -54,3 +54,14 @@ status = platform.build()
 
 comp.build()
 
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+status = platform.build()
+
+comp = client.get_component(name="memory_tests")
+comp.build()
+
